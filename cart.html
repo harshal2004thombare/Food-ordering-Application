@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Cart</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .cart-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fdfdfd;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .cart-item {
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-item:last-child {
+      border-bottom: none;
+    }
+
+    .cart-item h3 {
+      margin: 0;
+    }
+
+    .cart-item p {
+      margin: 5px 0 0 0;
+      color: #555;
+    }
+
+    .remove-btn {
+      background: #ff4d4d;
+      border: none;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .empty-cart {
+      text-align: center;
+      color: #888;
+      font-size: 18px;
+    }
+
+    .total {
+      text-align: right;
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .payment-btn {
+      margin-top: 20px;
+      display: block;
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      float: right;
+    }
+
+    .payment-btn:disabled {
+      background-color: #aaa;
+      cursor: not-allowed;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+    }
+
+    .header ul {
+      display: flex;
+      list-style: none;
+    }
+
+    .header li {
+      margin: 0 10px;
+    }
+
+    .header a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .search input {
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+
+    .srchicon {
+      margin-left: 5px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header">
+      <div class="logo-text">KIRAN SIR Resto</div>
+      <nav class="nav" id="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="food_menu.html">Food Menu</a></li>
+          <li><a href="bill.html">Payed Bill</a></li>
+          <li><a href="cart.html">Add to Cart</a></li>
+        </ul>
+      </nav>
+
+      <div class="account">
+        <ul>
+          <li><a href="#"><i class="fa-solid fa-house-chimney"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+          <li>
+            <div class="search">
+              <input type="search" placeholder="Search" />
+              <i class="fa-solid fa-magnifying-glass srchicon"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <div class="total" id="subtotal"></div>
+    <div class="total" id="gst"></div>
+    <div class="total" id="grandTotal"></div>
+    <button class="payment-btn" id="paymentBtn" disabled>Proceed to Payment</button>
+  </div>
+
+<script src="cart.js"></script>
+
+
+</body>
+</html>

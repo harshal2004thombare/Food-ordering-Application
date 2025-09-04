@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Kedar Sir Resto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Header */
+    .header {
+      background-color: #ff3d00;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    /* Navigation */
+    .nav ul,
+    .account ul {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+      justify-content: center;
+      background-color: #333;
+    }
+
+    .nav ul li a,
+    .account ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .nav ul li a:hover {
+      background-color: white;
+      color: #ff3d00;
+      font-weight: bold;
+    }
+
+    .account ul li a i {
+      font-size: 20px;
+      color: white;
+    }
+
+    /* Feedback button in header */
+    .feedback-btn-header {
+      background-color: #ff3d00;
+      padding: 8px 14px;
+      color: white;
+      border-radius: 6px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .feedback-btn-header:hover {
+      background-color: #e64a19;
+    }
+
+    /* Login Box */
+    .login-container {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+      text-align: center;
+    }
+
+    .login-title {
+      margin-bottom: 25px;
+      font-size: 30px;
+      color: #ff3d00;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .login-input {
+      padding: 14px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .login-button {
+      padding: 14px;
+      background-color: #ff3d00;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #e64a19;
+    }
+
+    .link {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .link a {
+      color: #ff3d00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">KEDAR SIR Resto</div>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="food_menu.html">Food Menu</a></li>
+      <li><a href="bill.html">PAYED BILL</a></li>
+      <li><a href="cart.html">Add to Cart</a></li>
+      <li><a href="register.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <div class="login-container">
+    <h2 class="login-title">Login</h2>
+    <form class="login-form" onsubmit="return loginUser(event)">
+      <input type="email" id="email" placeholder="Email" required class="login-input" />
+      <input type="password" id="password" placeholder="Password" required class="login-input" />
+      <button type="submit" class="login-button">Login</button>
+    </form>
+    <div class="link">
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </div>
+  </div>
+<script src="login.js"></script>
+
+</body>
+</html>

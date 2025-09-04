@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kedar Sir Resto - Paid Bill</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff7e6;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .receipt-container {
+      background: white;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      border-radius: 10px;
+    }
+
+    .receipt-header {
+      text-align: center;
+      color: green;
+    }
+
+    .receipt-header h2 {
+      margin-bottom: 0;
+    }
+
+    .receipt-header p {
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    .section {
+      margin-top: 15px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 5px;
+    }
+
+    th, td {
+      padding: 6px;
+      border-bottom: 1px solid #ccc;
+      font-size: 13px;
+      text-align: left;
+    }
+
+    .totals td {
+      font-weight: bold;
+    }
+
+    .footer {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .footer strong {
+      color: #444;
+    }
+
+    .paid-note {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+
+    .print-btn {
+      background-color: #388e3c;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 20px auto 0;
+      display: block;
+      width: 100%;
+    }
+
+
+    @media print {
+      .print-btn {
+        display: none;
+      }
+    }
+  </style>
+  <div class="header">
+      <div class="logo-text">KIRAN SIR Resto</div>
+      <nav class="nav" id="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="food_menu.html">Food Menu</a></li>
+          <li><a href="bill.html">Payed Bill</a></li>
+          <li><a href="cart.html">Add to Cart</a></li>
+        </ul>
+      </nav>
+
+      <div class="account">
+        <ul>
+          <li><a href="#"><i class="fa-solid fa-house-chimney"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+          <li>
+            <div class="search">
+              <input type="search" placeholder="Search" />
+              <i class="fa-solid fa-magnifying-glass srchicon"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+</head>
+
+<body>
+  <div class="receipt-container">
+    <div class="receipt-header">
+      <h2>Thank You!</h2>
+      <p>Here is your Paid Bill</p>
+      <p>Kedar Sir Resto, Kothrud,Maharashtra - 1671</p>
+    </div>
+
+    <div class="section">
+      <strong>Invoice Details</strong>
+      <p>Bill No: <span id="billNo"></span></p>
+      <p>Date: <span id="billDate"></span></p>
+      <p>Time: <span id="billTime"></span></p>
+    </div>
+
+    <div class="section">
+      <strong>Customer Details</strong>
+      <p>Name: <span id="custName"></span></p>
+      <p>Contact: <span id="custContact"></span></p>
+    </div>
+
+    <div class="section">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>GST%</th>
+            <th>Qty</th>
+            <th>MRP</th>
+            <th>Disc</th>
+            <th>Net Amt</th>
+          </tr>
+        </thead>
+        <tbody id="billItems"></tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <table>
+        <tbody class="totals">
+          <tr><td>Net Sale Qty</td><td id="netQty" colspan="5"></td></tr>
+          <tr><td>Gross Amount</td><td id="grossAmt" colspan="5"></td></tr>
+          <tr><td>SGST Tax</td><td id="sgst" colspan="5"></td></tr>
+          <tr><td>CGST Tax</td><td id="cgst" colspan="5"></td></tr>
+          <tr><td>Round Off</td><td id="roundOff" colspan="5"></td></tr>
+          <tr><td>Final Bill Amount</td><td id="finalAmt" colspan="5"></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <p>*Final Bill Value Inclusive of GST</p>
+      <p><strong>Tender Details:</strong> Credit Mode</p>
+      <p><strong>Amount Paid:</strong> ₹<span id="tenderAmt"></span></p>
+    </div>
+
+    <div class="paid-note">
+      ✅ Bill Paid Successfully!
+    </div>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Print or Save Bill</button>
+  </div>
+
+<script src="bill.js"></script>
+
+
+
+</body>
+</html>

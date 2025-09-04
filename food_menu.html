@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Menu</title>
+  <link rel="stylesheet" href="styles.css" />
+  
+</head>
+<body>
+  <header>
+    <div class="header">
+      <div class="logo-text">KIRAN SIR Resto</div>
+      <nav class="nav" id="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Food Menu</a></li>
+          <li><a href="#">Payed Bill</a></li>
+          <li><a href="cart.html">Add to Cart</a></li>
+        </ul>
+      </nav>
+      <div class="account">
+        <ul>
+          <li><a href="#"><i class="fa-solid fa-house-chimney"></i></a></li>
+          <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+          <li>
+            <div class="search">
+              <input type="search" id="searchInput" onkeyup="filterMenu()" placeholder="Search food..." />
+              <i class="fa-solid fa-magnifying-glass srchicon"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="food-menu">
+    <div class="item">
+      <img src="images/pizza.jpg" alt="Pizza">
+      <h3>Pizza</h3>
+      <p>₹100</p>
+      <button onclick="addToCart('Pizza', 100)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img src="images/burger.webp" alt="Burger">
+      <h3>Burger</h3>
+      <p>₹50</p>
+      <button onclick="addToCart('Burger', 50)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img src="images/sandwich.webp" alt="Sandwich">
+      <h3>Sandwich</h3>
+      <p>₹40</p>
+      <button onclick="addToCart('Sandwich', 40)">Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img src="images/doughnut.webp" alt="Doughnut">
+      <h3>Doughnut</h3>
+      <p>₹40</p>
+      <button onclick="addToCart('Doughnut', 40)">Add to Cart</button>
+    </div>
+  </div>
+  <script src="food_menu.js"></script>
+</body>
+</html>
